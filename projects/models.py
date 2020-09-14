@@ -10,3 +10,6 @@ class Project(models.Model):
     image = models.ImageField(null=True, blank=True, upload_to='project_images/')
     code = models.URLField()
     detail = RichTextField()
+
+    def __str__(self):
+        return self.title

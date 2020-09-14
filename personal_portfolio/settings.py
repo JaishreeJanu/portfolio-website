@@ -14,7 +14,7 @@ from pathlib import Path
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -132,20 +132,46 @@ MEDIA_ROOT = 'var/www/media/'
 
 CKEDITOR_UPLOAD_PATH = 'blogs/'
 
-'''
 CKEDITOR_CONFIGS = {
-    'default':
-        {'toolbar': 'Custom',
-         'toolbar_Custom': [
-             ['Bold', 'Link', 'Unlink', 'Image'],
-         ],
-         },
-    'special': 
+    'default': {
+    'width': 1000,
+    'height': 600,
+    'toolbar': 'Full',
+    'extraPlugins': ','.join([
+      'codesnippet',
+    ]),
+  },
+  'special':
         {'toolbar': 'Special', 'height': 500,
-         'toolbar_Special': 
+         'toolbar_Special':
              [
                  ['Bold'],
                  ['CodeSnippet'], # here
+                 ['Image'],
+                 ['Italic'],
+                 ['Underline'],
+                 ['Font'],
+                 ['FontSize'],
+        ['TextColor'],
+        ['BGColor'],
+        ['NumberedList'],
+        ['BulletedList'],
+        ['-'],
+        ['Outdent'],
+        ['Indent'],
+        ['-'],
+        ['JustifyLeft'],
+        ['JustifyCenter'],
+        ['JustifyRight'],
+        ['JustifyBlock'],
+        ['Link'],
+        ['Unlink'],
+        ['Source'],
+        ['h1'],
+        ['h2'],
+        ['h3'],
+        ['p'],
              ], 'extraPlugins': 'codesnippet', # here
          }
-}'''
+
+}

@@ -2,17 +2,16 @@
 
 {% block page_content %}
 
-<div class="col-md-8 offset-md-2">
+<body style="background: black; height: 100%;  ">
 
-    <h1>Blog Index</h1>
+<div class="col-md-8 offset-md-2" style="margin-top: 150px; margin-left: -4%">
 
-    <hr>
 
     {% for post in posts %}
 
-    <h2><a href="{% url 'blog_detail' post.pk%}">{{ post.title }}</a></h2>
+    <h4 style="margin-top: 30px; "><a href="{% url 'blog_detail' post.pk%}" style="color: white; ">{{ post.title }}</a></h4>
 
-    <small>
+    <small style="color: #C3DEE9; ">
 
         {{ post.created_on.date }} |&nbsp;
 
@@ -20,7 +19,7 @@
 
         {% for category in post.categories.all %}
 
-        <a href="{% url 'blog_category' category.name %}">
+        <a href="{% url 'blog_category' category.name %}" style="color: #C3DEE9; ">
 
             {{ category.name }}
 
@@ -30,10 +29,12 @@
 
     </small>
 
-    <p>{{ post.description}}...</p>
+    <p style="color: white; ">{{ post.description}}...</p>
 
     {% endfor %}
 
 </div>
+
+</body>
 
 {% endblock %}

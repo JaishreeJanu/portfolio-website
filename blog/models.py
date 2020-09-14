@@ -14,7 +14,7 @@ class Post(models.Model):
 
     title = models.CharField(max_length=255)
 
-    body = RichTextUploadingField(blank=True)
+    body = RichTextUploadingField(blank=True, config_name='special')
 
     description = models.TextField()
 
